@@ -29,7 +29,10 @@ from azure.ai.language.conversations import ConversationAnalysisClient
 from azure.ai.language.conversations.authoring import ConversationAuthoringClient
 from azure.core.credentials import AzureKeyCredential
 
-subscription_key = "74e5c781f86340d2ba0cfea395d11081"
+with open("keys.json") as key:
+    keys = json.load(key)
+
+subscription_key = keys['key']
 endpoint = "https://language7.cognitiveservices.azure.com/"
 project_name = "Game_CLU"
 deployment_name = "Game_Deployment"
